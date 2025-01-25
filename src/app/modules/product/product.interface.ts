@@ -1,3 +1,5 @@
+import { Model } from "mongoose";
+
 export type TProduct = {
   name: string;
   description: string;
@@ -13,3 +15,4 @@ export type TProduct = {
     inStock: boolean;
   };
 };
+
