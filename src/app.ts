@@ -10,7 +10,7 @@ app.use(cors());
 
 // product route
 app.use('/api/products', ProductRoute);
-
+ 
 
 app.get("/", (req: Request, res: Response) => {
   res.send("E-commerce Product Data Server Running..............");
