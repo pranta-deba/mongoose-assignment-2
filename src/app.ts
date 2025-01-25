@@ -1,6 +1,6 @@
-import express, { Request, Response } from "express";
+import express, { Application, Request, Response } from "express";
 import cors from 'cors';
-const app = express();
+const app: Application = express();
 const port = 3000;
 
 // parsers
@@ -9,12 +9,7 @@ app.use(cors());
 
 
 app.get("/", (req: Request, res: Response) => {
-  res.send("Hello World!");
+  res.send("E-commerce Product Data Server Running..............");
 });
-
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
-});
-
 
 export default app
