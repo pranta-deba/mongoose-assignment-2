@@ -35,9 +35,22 @@ const updateSingleProductIntoDB = async (
   }
 };
 
+const deleteSingleProductIntoDB = async (id: string) => {
+  const result = await Product.deleteOne({ _id: id });
+  return result;
+};
+
+const searchProductsIntoDB = async (searchTerm: string) => {
+  const result = 
+
+  return result;
+};
+
 export const ProductServices = {
   createProductIntoDB,
   getAllProductIntoDB,
   getSingleProductIntoDB,
   updateSingleProductIntoDB,
+  deleteSingleProductIntoDB,
+  searchProductsIntoDB
 };
