@@ -41,9 +41,16 @@ const deleteSingleProductIntoDB = async (id: string) => {
 };
 
 const searchProductsIntoDB = async (searchTerm: string) => {
-  const result = 
+  try {
+    const regex = new RegExp(searchTerm, "i");
+    const results = await Product.find({
+      $or: [{ name: { $regex: regex } }, { tags: { $in: [regex] } }],
+    }).exec();
 
-  return result;
+    return results;
+  } catch (error: any) {
+    throw new Error(`Error searching products: ${error.message}`);
+  }
 };
 
 export const ProductServices = {
@@ -52,5 +59,5 @@ export const ProductServices = {
   getSingleProductIntoDB,
   updateSingleProductIntoDB,
   deleteSingleProductIntoDB,
-  searchProductsIntoDB
+  searchProductsIntoDB,
 };
