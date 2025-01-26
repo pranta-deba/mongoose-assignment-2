@@ -4,7 +4,6 @@ import { ProductRoute } from "./app/modules/product/product.route"; // Importing
 import { OrderRoute } from "./app/modules/order/order.route"; // Importing OrderRoute from its module
 
 const app: Application = express();
-const port = 3000;
 
 // Middleware - JSON parser for request bodies
 app.use(express.json());
@@ -19,6 +18,11 @@ app.use("/api/products", ProductRoute);
 // Order routes
 app.use("/api/orders", OrderRoute);
 
+// Root route handler
+app.get("/", (req: Request, res: Response) => {
+  res.send("E-commerce Product Data Server Running..............");
+});
+
 // Catch-all route handler for undefined routes
 app.use((req: Request, res: Response) => {
   res.status(404).json({
@@ -27,14 +31,5 @@ app.use((req: Request, res: Response) => {
   });
 });
 
-// Root route handler
-app.get("/", (req: Request, res: Response) => {
-  res.send("E-commerce Product Data Server Running..............");
-});
-
-// Start the server
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
-});
 
 export default app;
