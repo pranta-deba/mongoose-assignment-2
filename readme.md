@@ -9,21 +9,6 @@ Access the live site here: [Live Demo](https://assignment-2-pi-pink.vercel.app/)
 
 ---
 
-## 📑 Table of Contents  
-- [About the Project](#about-the-project)  
-- [Features](#features)  
-- [Technologies Used](#technologies-used)  
-- [Installation](#installation)  
-- [API Endpoints](#api-endpoints)  
-- [CRUD Operations](#crud-operations)  
-- [Testing](#testing)  
-- [Deployment](#deployment)  
-- [License](#license)  
-- [Contributing](#contributing)  
-- [Author](#author)  
-
----
-
 ## 🛠️ About the Project  
 This project provides an API for managing products and orders for an e-commerce platform. It supports creating, reading, updating, and deleting products and orders, with additional search functionalities.
 
