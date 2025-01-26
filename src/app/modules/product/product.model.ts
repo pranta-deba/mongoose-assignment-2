@@ -28,4 +28,5 @@ const productSchema = new Schema<TProduct>({
   },
 });
 
+// Export the Mongoose model for the "Product" collection
 export const Product = model<TProduct>("Product", productSchema);
