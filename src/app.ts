@@ -14,6 +14,13 @@ app.use("/api/products", ProductRoute);
 // order route
 app.use("/api/orders", OrderRoute);
 
+// Catch-all route handler for undefined routes
+app.use((req: Request, res: Response) => {
+  res.status(404).json({
+    success: false,
+    message: "Route not found",
+  });
+});
 
 app.get("/", (req: Request, res: Response) => {
   res.send("E-commerce Product Data Server Running..............");
